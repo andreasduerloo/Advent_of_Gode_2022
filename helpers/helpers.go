@@ -72,6 +72,12 @@ func Member[T comparable](k T, m map[T]struct{}) bool {
 	return present
 }
 
+// Four ways to represent a grid
+// - A single slice
+// - A 2D array
+// - A Map
+// - A graph
+
 func GridAsMap() {
 	//
 }

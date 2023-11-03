@@ -3,6 +3,7 @@ package main
 import (
 	day_01 "advent2022/day_01_calories"
 	day_04 "advent2022/day_04_cleanup"
+	day_12 "advent2022/day_12_hillclimbing"
 	day_21 "advent2022/day_21_monkeymath"
 	"fmt"
 	"os"
@@ -30,6 +31,9 @@ func main() {
 		fmt.Println(first, second)
 	case 4:
 		first, second := day_04.Solve()
+		fmt.Println(first, second)
+	case 12:
+		first, second := day_12.Solve()
 		fmt.Println(first, second)
 	case 21:
 		first, second := day_21.Solve()
