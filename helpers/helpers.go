@@ -66,6 +66,10 @@ func ReGetInts(s string) []int {
 // The first three options all have one issue in common: you have to check for edges whenever you interact with neighbors to avoid going out of bounds
 // The last option tackles that problem at creation time, which is why I prefer it
 
+// These implementations are a starting point, additional fields might be needed for individual puzzles. For example:
+// - Whether a node has been visited or has otherwise been interacted with (bool)
+// - If the location of the neighbors matters, replace the slice of pointers with four pointers: up, down, right, left
+
 // Grids of integers
 
 type inode struct {
@@ -167,17 +171,6 @@ func RGridAsGraph(input string) ([]rnode, int, int) {
 	}
 
 	return out, width, height
-}
-
-// Returns a single slice contianing all the positions in the grid, as well as the length of a row
-// Using the row length, neighbors can be calculated (i - 1, i + 1, i - length, i + length)
-// ints bool -> also do Atoi
-func GridAsSlice() {
-	//
-}
-
-func GridAs2DSlice() {
-	//
 }
 
 type point struct {
