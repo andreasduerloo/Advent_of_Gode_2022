@@ -105,17 +105,14 @@ func decimalToBase5(i int) string {
 		biggest += 1
 	}
 
+	biggest -= 1
+
 	// Build the number left-to-right
 	num := i
 	var out string
 	for pow := biggest; pow >= 0; pow-- {
 		out = out + strconv.Itoa(num/power(5, pow))
 		num = num % power(5, pow)
-	}
-
-	// Trim leading zero if needed
-	if out[0] == '0' {
-		out = out[1:]
 	}
 
 	return out
