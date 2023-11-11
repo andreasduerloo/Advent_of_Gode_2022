@@ -3,6 +3,7 @@ package day_13
 import (
 	"fmt"
 	"os"
+	"slices"
 )
 
 func Solve() (int, int) {
@@ -16,11 +17,16 @@ func Solve() (int, int) {
 	var correct int
 
 	for i := 0; i < len(packets); i += 2 {
-		fmt.Println(comparePackets(packets[i], packets[i+1]))
 		if comparePackets(packets[i], packets[i+1]) == Ok {
 			correct += (i / 2) + 1
 		}
 	}
 
-	return correct, 0
+	packets = appendDividers(packets)
+
+	slices.SortFunc(packets, orderPackets)
+
+	dividers := findDividers(packets)
+
+	return correct, dividers
 }

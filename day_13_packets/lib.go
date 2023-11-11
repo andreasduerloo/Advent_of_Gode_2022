@@ -80,3 +80,47 @@ func comparePackets(packet1, packet2 []interface{}) string {
 		return Unknown
 	}
 }
+
+func orderPackets(packet1, packet2 []interface{}) int {
+	switch comparePackets(packet1, packet2) {
+	case Ok:
+		return -1
+	case Nok:
+		return 1
+	case Unknown:
+		return 0
+	}
+	return 0
+}
+
+func appendDividers(packets [][]interface{}) [][]interface{} {
+	var two, six []interface{}
+
+	err := json.Unmarshal([]byte("[[2]]"), &two)
+	err = json.Unmarshal([]byte("[[6]]"), &six)
+
+	if err == nil {
+		packets = append(packets, two)
+		packets = append(packets, six)
+	}
+	return packets
+}
+
+func findDividers(packets [][]interface{}) int {
+	out := 1
+
+	var two, six []interface{}
+
+	err := json.Unmarshal([]byte("[[2]]"), &two)
+	err = json.Unmarshal([]byte("[[6]]"), &six)
+
+	if err == nil {
+		for i, packet := range packets {
+			if orderPackets(packet, six) == 0 || orderPackets(packet, two) == 0 {
+				out *= (i + 1)
+			}
+		}
+	}
+
+	return out
+}
