@@ -7,6 +7,7 @@ import (
 	day_11 "advent2022/day_11_monkeys"
 	day_12 "advent2022/day_12_hillclimbing"
 	day_13 "advent2022/day_13_packets"
+	day_14 "advent2022/day_14_sand"
 	day_21 "advent2022/day_21_monkeymath"
 	day_25 "advent2022/day_25_snafu"
 	"fmt"
@@ -47,6 +48,9 @@ func main() {
 		fmt.Println(first, second)
 	case 13:
 		first, second := day_13.Solve()
+		fmt.Println(first, second)
+	case 14:
+		first, second := day_14.Solve()
 		fmt.Println(first, second)
 	// case 20:
 	// first, second := day_20.Solve()
