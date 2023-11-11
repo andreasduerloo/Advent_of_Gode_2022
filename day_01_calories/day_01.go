@@ -14,7 +14,6 @@ func Solve() (int, int) {
 	}
 
 	elves := parse(string(input))
-	// sort.Slice(elves, func(x, y int) bool { return y < x }) <- Why doesn't this work?
 	slices.SortFunc(elves, func(x, y int) int { return y - x })
 
 	return elves[0], (elves[0] + elves[1] + elves[2])

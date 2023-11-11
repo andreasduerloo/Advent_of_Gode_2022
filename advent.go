@@ -2,6 +2,7 @@ package main
 
 import (
 	day_01 "advent2022/day_01_calories"
+	day_02 "advent2022/day_02_rockpaperscissors"
 	day_04 "advent2022/day_04_cleanup"
 	day_11 "advent2022/day_11_monkeys"
 	day_12 "advent2022/day_12_hillclimbing"
@@ -31,6 +32,9 @@ func main() {
 	switch day {
 	case 1:
 		first, second := day_01.Solve()
+		fmt.Println(first, second)
+	case 2:
+		first, second := day_02.Solve()
 		fmt.Println(first, second)
 	case 4:
 		first, second := day_04.Solve()
